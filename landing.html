@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Basavaraj H G — Full Stack &amp; AI Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body style="margin:0;background:#0b0e1b;overflow:hidden">
+
+<div class="intro-portal" style="position:relative;min-height:100vh">
+  <div class="intro-media-wrap">
+    <video class="intro-bg-vid" id="introVid" playsinline autoplay muted loop preload="auto">
+      <source src="assets/cinematic-intro.webm" type="video/webm">
+      <source src="assets/cinematic-intro.mp4" type="video/mp4">
+      <source src="assets/1792764527006612.mp4" type="video/mp4">
+    </video>
+    <audio id="introAudio" src="assets/om-veezha-veera-bgm.mp3" loop preload="auto"></audio>
+    <div class="intro-overlay"></div>
+  </div>
+
+  <header class="intro-header">
+    <div class="intro-brand">
+      <span class="intro-logo">BH</span>
+      <div class="intro-brand-meta">
+        <strong>Basavaraj H G</strong>
+        <span>Full Stack &amp; AI Developer</span>
+      </div>
+    </div>
+    <div class="intro-header-acts">
+      <button class="intro-audio-btn" id="introAudioBtn" type="button" aria-label="Toggle cinematic music: OM - Veezha Veera BGM" title="OM: Veezha Veera BGM (Instrumental)">
+        <span class="eq-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span class="audio-lbl">Audio: Off</span>
+      </button>
+      <a class="intro-skip-btn" href="index.html" style="text-decoration:none">Enter Direct ↗</a>
+    </div>
+  </header>
+
+  <div class="intro-content">
+    <div class="intro-actions">
+      <a class="enter-btn" href="index.html" style="text-decoration:none">
+        <span>Enter Portfolio</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="intro-progress-bar" id="introProgress" aria-hidden="true"><i></i></div>
+</div>
+
+<script>
+(function(){
+  var vid = document.getElementById('introVid');
+  var audio = document.getElementById('introAudio');
+  var audioBtn = document.getElementById('introAudioBtn');
+  var prog = document.getElementById('introProgress') ? document.getElementById('introProgress').querySelector('i') : null;
+  var SOFT_VOL = 0.28; // Soft, blended ambient volume
+  var fadeTimer = null;
+
+  function fadeAudioIn(){
+    if(!audio) return;
+    clearInterval(fadeTimer);
+    audio.volume = 0.02;
+    var p = audio.play();
+    if(p !== undefined){
+      p.then(function(){
+        if(audioBtn){
+          audioBtn.classList.add('active');
+          var lbl = audioBtn.querySelector('.audio-lbl');
+          if(lbl) lbl.textContent = 'Veezha Veera BGM ♫';
+        }
+        // Smoothly blend volume up to soft level
+        fadeTimer = setInterval(function(){
+          if(audio.volume < SOFT_VOL - 0.02){
+            audio.volume = Math.min(SOFT_VOL, audio.volume + 0.025);
+          } else {
+            audio.volume = SOFT_VOL;
+            clearInterval(fadeTimer);
+          }
+        }, 45);
+      }).catch(function(err){
+        console.warn('Audio play was prevented:', err);
+      });
+    }
+  }
+
+  function fadeAudioOut(){
+    if(!audio) return;
+    clearInterval(fadeTimer);
+    fadeTimer = setInterval(function(){
+      if(audio.volume > 0.035){
+        audio.volume = Math.max(0, audio.volume - 0.035);
+      } else {
+        audio.volume = 0;
+        clearInterval(fadeTimer);
+        audio.pause();
+        if(audioBtn){
+          audioBtn.classList.remove('active');
+          var lbl = audioBtn.querySelector('.audio-lbl');
+          if(lbl) lbl.textContent = 'Audio: Off';
+        }
+      }
+    }, 40);
+  }
+
+  function toggleAudio(e){
+    if(e && e.stopPropagation) e.stopPropagation();
+    if(!audio) return;
+
+    if(audio.paused){
+      fadeAudioIn();
+    } else {
+      fadeAudioOut();
+    }
+  }
+
+  if(audioBtn){
+    audioBtn.addEventListener('click', toggleAudio);
+  }
+
+  if(vid && prog){
+    vid.addEventListener('timeupdate', function(){
+      if(vid.duration){
+        prog.style.width = ((vid.currentTime / vid.duration) * 100).toFixed(1) + '%';
+      }
+    });
+  }
+})();
+</script>
+</body>
+</html>
+

@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Basavaraj H G — Full Stack Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- CINEMATIC INTRO LANDING PORTAL -->
+<div class="intro-portal" id="introPortal" aria-label="Cinematic introduction">
+  <div class="intro-media-wrap">
+    <video class="intro-bg-vid" id="introVid" playsinline autoplay muted loop preload="auto">
+      <source src="assets/cinematic-intro.webm" type="video/webm">
+      <source src="assets/cinematic-intro.mp4" type="video/mp4">
+      <source src="assets/1792764527006612.mp4" type="video/mp4">
+    </video>
+    <audio id="introAudio" src="assets/om-veezha-veera-bgm.mp3" loop preload="auto"></audio>
+    <div class="intro-overlay"></div>
+  </div>
+
+  <header class="intro-header">
+    <div class="intro-brand">
+      <span class="intro-logo">BH</span>
+      <div class="intro-brand-meta">
+        <strong>Basavaraj H G</strong>
+        <span>Full Stack &amp; AI Developer</span>
+      </div>
+    </div>
+    <div class="intro-header-acts">
+      <button class="intro-audio-btn" id="introAudioBtn" type="button" aria-label="Toggle cinematic music: OM - Veezha Veera BGM" title="OM: Veezha Veera BGM (Instrumental)">
+        <span class="eq-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span class="audio-lbl">Audio: Off</span>
+      </button>
+      <button class="intro-skip-btn" id="introSkipBtn" type="button">Skip to Portfolio ↗</button>
+    </div>
+  </header>
+
+  <div class="intro-content">
+    <div class="intro-actions">
+      <button class="enter-btn" id="enterBtn" type="button">
+        <span>Enter Portfolio</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="intro-progress-bar" id="introProgress" aria-hidden="true"><i></i></div>
+</div>
+
+<header class="nav"><a class="logo" href="#top" id="logoIntroBtn" aria-label="Replay intro video" title="Replay intro video">BH</a>
+<nav class="pill" id="pill"><a href="#top">Home</a><a href="#about">About</a><a href="#stack">Skills</a><a href="#work">Projects</a><a href="#learn">Learning</a><a href="#journey">Journey</a><a href="#contact">Contact</a><i></i></nav></header>
+
+<main>
+<section class="hero" id="top">
+  <div class="ghost" id="ghost" aria-hidden="true">BASAVARA<span id="ghost-j" class="ghost-j">J</span></div>
+  <video class="person" id="person-vid" autoplay loop muted playsinline aria-label="Basavaraj character introduction video">
+    <source src="assets/hero-video-cutout.webm" type="video/webm">
+    <source src="assets/hero-video-cutout.mp4" type="video/mp4">
+  </video>
+  <div class="char-vid-ctrls closed" id="vidCtrls">
+    <button class="dot-btn" id="dotBtn" type="button" aria-label="Play intro video with sound" title="Play with audio">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+    </button>
+    <div class="ctrls-expanded">
+      <button class="vid-btn" id="vidPlayBtn" type="button" aria-label="Play / Pause">
+        <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M8 5v14l11-7z"/></svg>
+        <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+      </button>
+      <button class="vid-btn on" id="sndBtn" type="button" aria-label="Toggle sound">
+        <svg class="icon-mute" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+        <svg class="icon-sound" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+      </button>
+      <span class="vid-label">Basavaraj · Intro</span>
+      <button class="vid-close-btn" id="vidCloseBtn" type="button" aria-label="Close controls" title="Minimize">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="copy">
+    <div class="tag">Open to entry-level roles</div>
+    <h1 aria-label="Full Stack Developer."><span class="ln"><span>Full Stack</span></span><span class="ln"><span>Developer<i>.</i></span></span></h1>
+    <p class="sub">Basavaraj H G. I build responsive web apps, REST APIs and AI features that people can actually use.</p>
+    <div class="acts"><a class="btn" href="#work">View my work</a><a class="btn o" href="#contact">Say hello</a></div>
+  </div>
+  <div class="scrl" aria-hidden="true">Scroll<i></i></div>
+</section>
+
+<section class="sec" id="about">
+  <div class="abt">
+    <div class="abt-story rv">
+      <div class="eb">About me</div>
+      <h2>Hi, I’m <em>Basavaraj.</em></h2>
+      <p class="lead">I’m a full-stack developer from Davanagere, Karnataka, finishing my MCA at REVA University with a 9.05 CGPA. I work across React, Node.js, Flask and MongoDB or Firebase, and I enjoy turning ideas into products people actually use.</p>
+      <p class="lead">Beyond web apps I build with machine learning and language models, using LangChain, LLaMA-3 and RAG so that apps answer from their own data.</p>
+      <div class="acts" style="opacity:1;transform:none;margin-top:26px"><a class="btn" href="#work">See projects</a><a class="btn o" href="#contact">Contact me</a></div>
+    </div>
+    <div class="lan rv" id="lan">
+      <div class="pend" id="pend"><div class="strap"></div><div class="clip"></div>
+        <div class="idc" id="idc">
+          <div class="idc-hdr">
+            <div class="hole"></div>
+            <div class="idc-hdr-row">
+              <div class="idc-logo">BH</div>
+              <div class="idc-hdr-text">
+                <span class="idc-hdr-title">DEVELOPER ID</span>
+                <span class="idc-hdr-sub">Portfolio · 2026</span>
+              </div>
+            </div>
+          </div>
+          <div class="idc-body">
+            <div class="ph-wrap"><div class="ph"></div></div>
+            <div class="nm">Basavaraj H G</div>
+            <div class="rl">Full Stack Developer</div>
+            <div class="idc-meta">
+              <div><span class="idc-lbl">ID NO.</span><span class="idc-val">BH-0001</span></div>
+              <div><span class="idc-lbl">STUDIED</span><span class="idc-val">MCA, REVA Univ</span></div>
+              <div><span class="idc-lbl">PASS OUT</span><span class="idc-val">2026</span></div>
+            </div>
+            <div class="idc-ft">
+              <div class="bar" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="idc-seal" title="Verified Portfolio 2026" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hint">Drag the card</div>
+    </div>
+    <div class="abt-facts rv">
+      <div class="eb">Overview</div>
+      <div class="facts">
+        <div><b>Location</b><span>Davanagere, Karnataka</span></div>
+        <div><b>Studied</b><span>MCA, REVA University</span></div>
+        <div><b>Languages</b><span>Kannada, English, Hindi, Telugu</span></div>
+        <div><b>Status</b><span>Open to entry-level roles</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-stack" id="stack">
+  <!-- 1. Section Header (Stats removed per user request) -->
+  <div class="stack-header-row rv">
+    <div class="stack-title-col">
+      <div class="stack-eyebrow">M Y &nbsp; S K I L L S</div>
+      <h2 class="stack-main-title">The Building <em>Blocks</em> of My Stack.</h2>
+    </div>
+    <div class="stack-desc-col">
+      <div class="stack-desc-divider"></div>
+      <p class="stack-desc-text">A blend of technologies, tools, and frameworks I use to turn ideas into real-world solutions.</p>
+    </div>
+  </div>
+
+  <!-- 2. Filter Buttons Row ON TOP of the 3D boxes per user request -->
+  <div class="stack-top-controls rv">
+    <div class="stack-chips-group" id="stackChipsGroup" role="tablist" aria-label="Filter skill categories">
+      <button class="s-chip on" type="button" data-filter="All" role="tab" aria-selected="true">All</button>
+      <button class="s-chip" type="button" data-filter="Languages" role="tab" aria-selected="false">Languages</button>
+      <button class="s-chip" type="button" data-filter="Frontend" role="tab" aria-selected="false">Frontend</button>
+      <button class="s-chip" type="button" data-filter="Backend" role="tab" aria-selected="false">Backend</button>
+      <button class="s-chip" type="button" data-filter="Data & Cloud" role="tab" aria-selected="false">Data &amp; Cloud</button>
+      <button class="s-chip" type="button" data-filter="AI / ML" role="tab" aria-selected="false">AI / ML</button>
+      <button class="s-chip" type="button" data-filter="Tools" role="tab" aria-selected="false">Tools</button>
+    </div>
+    <a class="stack-explore-btn" href="#work">
+      <span class="explore-circle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
+      <span>Explore My Projects</span>
+    </a>
+  </div>
+
+  <!-- 3. Pure Code 3D Podium Stage (No Image) -->
+  <div class="stack-podium-stage rv" id="stackStage">
+    <!-- Chrome Arch Rail & Rolling Sphere -->
+    <div class="podium-chrome-arch" aria-hidden="true">
+      <svg class="arch-wire-svg" viewBox="0 0 1000 240" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="chromeRail" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#b8bec9"/>
+            <stop offset="25%" stop-color="#ffffff"/>
+            <stop offset="50%" stop-color="#7a8296"/>
+            <stop offset="75%" stop-color="#ffffff"/>
+            <stop offset="100%" stop-color="#9da3b4"/>
+          </linearGradient>
+        </defs>
+        <path d="M 120 195 C 260 45, 660 22, 850 220" stroke="url(#chromeRail)" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div class="chrome-sphere" title="Balancing logic &amp; creativity"></div>
+    </div>
+
+    <!-- Foliage on Left Marble Base -->
+    <div class="podium-foliage" aria-hidden="true">
+      <svg viewBox="0 0 60 70" fill="none">
+        <path d="M 30 70 C 24 48, 8 38, 4 28 C 14 26, 24 36, 30 70 Z" fill="#62804d"/>
+        <path d="M 30 70 C 36 46, 50 34, 56 22 C 46 23, 37 36, 30 70 Z" fill="#4d6639"/>
+        <path d="M 30 70 C 27 40, 18 18, 27 4 C 33 16, 31 36, 30 70 Z" fill="#7ba05b"/>
+      </svg>
+    </div>
+
+    <!-- Handwritten Calligraphy on Right (positioned safely to not overlap icons) -->
+    <div class="podium-handwritten" aria-hidden="true">
+      <div class="hw-text">Same Tools.<br>Bigger Ideas.</div>
+      <svg class="hw-arrow" viewBox="0 0 50 60" fill="none">
+        <path d="M 10 10 C 28 28, 40 40, 15 54" stroke="#5a6078" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="2.5 2.5"/>
+        <path d="M 22 46 L 14 55 L 24 57" stroke="#5a6078" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <!-- 6 Stepped Columns Grid -->
+    <div class="podium-columns-grid" id="podiumGrid">
+      
+      <!-- 01 LANGUAGES -->
+      <div class="podium-col col-lang" data-cat="Languages" tabindex="0" role="button" aria-label="Category: Languages">
+        <div class="stack-slab">
+          <div class="slab-head">
+            <span class="slab-num">01</span>
+            <h3 class="slab-title">Languages</h3>
+            <span class="slab-sub">The foundation.</span>
+            <i class="slab-dash"></i>
+          </div>
+          <div class="slab-cubes">
+            <!-- Python -->
+            <div class="tech-item" title="Python">
+              <div class="cube-box">
+                <svg viewBox="0 0 128 128" width="28" height="28">
+                  <path fill="#387EB8" d="M63.5 15.5c-15.8 0-14.8 6.9-14.8 6.9l.02 7.1h15.1v2.1H32.4s-10.2 1.2-10.2 14.8c0 13.7 8.9 14.2 8.9 14.2h5.3v-7.4s-.3-8.9 8.8-8.9h15.2s8.5.1 8.5-8.3v-12s1.3-8.4-15.4-8.4zm-8.3 4.5a2.7 2.7 0 1 1 0 5.4 2.7 2.7 0 0 1 0-5.4z"/>
+                  <path fill="#FFE052" d="M64.5 112.5c15.8 0 14.8-6.9 14.8-6.9l-.02-7.1H64.2v-2.1h31.4s10.2-1.2 10.2-14.8c0-13.7-8.9-14.2-8.9-14.2h-5.3v7.4s.3 8.9-8.8 8.9H57.6s-8.5-.1-8.5 8.3v12s-1.3 8.4 15.4 8.4zm8.3-4.5a2.7 2.7 0 1 1 0-5.4 2.7 2.7 0 0 1 0 5.4z"/>
+                </svg>
+              </div>
+              <span class="tech-name">Python</span>
+            </div>
+            <!-- Java -->
+            <div class="tech-item" title="Java">
+              <div class="cube-box">
+                <svg viewBox="0 0 128 128" width="26" height="26">
+                  <path fill="#E76F00" d="M48 88c0 0-8 5 4 6 15 2 22 1 38-4 0 0-7 3-17 5-13 2-33 2-25-7z"/>
+                  <path fill="#E76F00" d="M42 75c0 0-9 6 3 7 14 1 27 1 45-4 0 0-9 4-20 6-15 2-38 2-28-9z"/>
+                  <path fill="#5382A1" d="M68 28c5 6 5 11-4 21-8 8-13 14-8 23 0 0-14-11-7-23 7-12 19-15 19-21z"/>
+                  <path fill="#5382A1" d="M80 43c4 4 6 10-5 21-9 9-11 15-4 22 0 0-14-10-5-23 8-11 14-15 14-20z"/>
+                  <path fill="#5382A1" d="M51 98c19 1 39-2 49-9 0 0-4 3-14 5-14 2-38 3-45 1 0 0 2 2 10 3z"/>
+                </svg>
+              </div>
+              <span class="tech-name">Java</span>
+            </div>
+            <!-- C -->
+            <div class="tech-item" title="C">
+              <div class="cube-box">
+                <svg viewBox="0 0 128 128" width="26" height="26">
+                  <path fill="#659AD2" d="M64 12l45 26v52L64 116 19 90V38l45-26z"/>
+                  <path fill="#004482" d="M64 21l37 21v44L64 107 27 86V42l37-21z"/>
+                  <path fill="#FFFFFF" d="M78 48c-3-3-8-5-14-5-12 0-21 9-21 21s9 21 21 21c6 0 11-2 14-5l5 7c-5 4-12 7-19 7-18 0-31-13-31-30s13-30 31-30c7 0 14 3 19 7l-5 7z"/>
+                </svg>
+              </div>
+              <span class="tech-name">C</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 02 FRONTEND -->
+      <div class="podium-col col-front" data-cat="Frontend" tabindex="0" role="button" aria-label="Category: Frontend">
+        <div class="stack-slab">
+          <div class="slab-head">
+            <span class="slab-num">02</span>
+            <h3 class="slab-title">Frontend</h3>
+            <span class="slab-sub">Design to reality.</span>
+            <i class="slab-dash"></i>
+          </div>
+          <div class="slab-cubes">
+            <!-- HTML5 -->
+            <div class="tech-item" title="HTML5">
+              <div class="cube-box">
+                <svg viewBox="0 0 128 128" width="26" height="26">
+                  <path fill="#E34F26" d="M19 12l9 101 36 10 36-10 9-101H19z"/>
+                  <path fill="#EF652A" d="M64 114l29-8 7-84H64v92z"/>
+                  <path fill="#ECECEC" d="M64 42H44l2 18h18v-18zm0 35H54l-1-12H43l2 23h19V77zm0 24v-11l15-4 1-13H45l-2-23h43l-4 44-18 7z"/>
+                  <path fill="#FFFFFF" d="M64 42h20l-2 18H64V42zm0 35h14l-1 14-13 4V77zm0-19v19h15l2-19H64z"/>
+                </svg>
+              </div>
+              <span class="tech-name">HTML5</span>
+            </div>
+            <!-- CSS3 -->
+            <div class="tech-item" title="CSS3">
+              <div class="cube-box">
+                <svg viewBox="0 0 128 128" width="26" height="26">
+                  <path fill="#1572B6" d="M19 12l9 101 36 10 36-10 9-101H19z"/>
+                  <path fill="#33A9DC" d="M64 114l29-8 7-84H64v92z"/>
+                  <path fill="#ECECEC" d="M64 42H44l2 18h18v-18zm0 35H54l-1-12H43l2 23h19V77zm0 24v-11l15-4 1-13H45l-2-23h43l-4 44-18 7z"/>
+                  <path fill="#FFFFFF" d="M64 42h20l-2 18H64V42zm0 35h14l-1 14-13 4V77zm0-19v19h15l2-19H64z"/>
+                </svg>
+              </div>
+              <span class="tech-name">CSS3</span>
+            </div>
+            <!-- JavaScript -->
+            <div class="tech-item" title="JavaScript">
+              <div class="cube-box">
+                <svg viewBox="0 0 128 128" width="26" height="26">
+                  <rect fill="#F7DF1E" width="128" height="128" rx="8"/>
+                  <path fill="#000000" d="M37 101l11-7c2 4 4 7 8 7 4 0 7-2 7-8V58h14v35c0 10-6 16-18 16-9 0-16-4-22-8zm41-2l11-6c3 5 7 8 13 8 6 0 10-3 10-7 0-5-4-7-12-10-13-5-18-9-18-18 0-9 7-16 18-16 8 0 14 3 19 9l-10 7c-2-3-5-5-9-5-4 0-6 2-6 5 0 4 3 6 11 9 14 5 19 10 19 19 0 10-8 17-21 17-11 0-20-6-26-8z"/>
+                </svg>
+              </div>
+              <span class="tech-name">JavaScript</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 03 BACKEND -->
+      <div class="podium-col col-back" data-cat="Backend" tabindex="0" role="button" aria-label="Category: Backend">
+        <div class="stack-slab">
+          <div class="slab-head">
+            <span class="slab-num">03</span>
+            <h3 class="slab-title">Backend</h3>
+            <span class="slab-sub">Powering logic.</span>
+            <i class="slab-dash"></i>
+          </div>
+          <div class="slab-cubes">
+            <!-- Node.js -->
+            <div class="tech-item" title="Node.js">
+              <div class="cube-box">
+                <svg viewBox="0 0 128 128" width="26" height="26">
+                  <path fill="#339933" d="M64 14l46 26.5v53L64 120l-46-26.5v-53L64 14z"/>
+                  <path fill="#FFFFFF" d="M64 24l37 21v42L64 108 27 87V45l37-21z"/>
+                  <path fill="#339933" d="M64 42a14 14 0 1 0 0 28 14 14 0 0 0 0-28zm0 18a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/>
+                </svg>
+              </div>
+              <span class="tech-name">Node.js</span>
+            </div>
+            <!-- Flask -->
+            <div class="tech-item" title="Flask">
+              <div class="cube-box">
+                <svg viewBox="0 0 128 128" width="24" height="24">
+                  <path fill="#12172F" d="M64 16c-3 0-5 2-5 5v16l-24 48c-4 8 2 17 11 17h36c9 0 15-9 11-17L69 37V21c0-3-2-5-5-5zm-2 10h4v12l2 4 22 44c1 2 0 4-2 4H46c-2 0-3-2-2-4l22-44 2-4V26z"/>
+                  <circle cx="58" cy="80" r="4" fill="#12172F"/>
+                  <circle cx="70" cy="86" r="3" fill="#12172F"/>
+                </svg>
+              </div>
+              <span class="tech-name">Flask</span>
+            </div>
+            <!-- Express -->
+            <div class="tech-item" title="Express.js">
+              <div class="cube-box">
+                <svg viewBox="0 0 128 128" width="26" height="26">
+                  <rect fill="#12172F" width="128" height="128" rx="64"/>
+                  <text x="64" y="78" fill="#FFFFFF" font-family="sans-serif" font-weight="800" font-size="44" text-anchor="middle">ex</text>
+                </svg>
+              </div>
+              <span class="tech-name">Express.js</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 04 DATA & CLOUD -->
+      <div class="podium-col col-data" data-cat="Data & Cloud" tabindex="0" role="button" aria-label="Category: Data and Cloud">
+        <div class="stack-slab">
+          <div class="slab-head">
+            <span class="slab-num">04</span>
+            <h3 class="slab-title">Data &amp; Cloud</h3>
+            <span class="slab-sub">From data to impact.</span>
+            <i class="slab-dash"></i>
+          </div>
+          <div class="slab-cubes">
+            <!-- MongoDB -->
+            <div class="tech-item" title="MongoDB">
+              <div class="cube-box">
+                <svg viewBox="0 0 128 128" width="26" height="26">
+                  <path fill="#13AA52" d="M64 12c-2 2-31 35-31 66 0 24 16 41 31 46 15-5 31-22 31-46 0-31-29-64-31-66z"/>
+                  <path fill="#116149" d="M64 12v112c15-5 31-22 31-46 0-31-29-64-31-66z"/>
+                  <path fill="#FFFFFF" d="M64 36c-1 3-3 6-3 9 0 21 7 42 3 67 0-25 3-46 3-67 0-3-2-6-3-9z"/>
+                </svg>
+              </div>
+              <span class="tech-name">MongoDB</span>
+            </div>
+            <!-- Firebase -->
+            <div class="tech-item" title="Firebase">
+              <div class="cube-box">
+                <svg viewBox="0 0 128 128" width="26" height="26">
+                  <path fill="#FFA000" d="M26 94L44 19c1-4 6-5 8-1l14 26-22 50z"/>
+                  <path fill="#F57C00" d="M80 50L66 24c-2-4-8-3-9 2L26 94l54-44z"/>
+                  <path fill="#FFCA28" d="M102 94L88 38c-1-4-7-4-8 1L26 94l38 21c4 2 8 2 12 0l26-21z"/>
+                </svg>
+              </div>
+              <span class="tech-name">Firebase</span>
+            </div>
+            <!-- AWS -->
+            <div class="tech-item" title="AWS">
+              <div class="cube-box">
+                <svg viewBox="0 0 128 128" width="28" height="28">
+                  <rect fill="#232F3E" width="128" height="128" rx="14"/>
+                  <path fill="#FF9900" d="M38 88c14 8 36 8 50 0 2-1 3 1 2 2-16 11-40 11-54 0-1-1 0-3 2-2z"/>
+                  <path fill="#FF9900" d="M90 84c3 2 7 6 7 6s-1-4-2-8c-1-4-2-7-2-7l-3 9z"/>
+                  <path fill="#FFFFFF" d="M42 46l-7 24h6l2-6h9l2 6h6L53 46h-11zm5 6l3 9h-6l3-9zm23-6h6v24h-6V46zm16 0l5 17 5-17h6l-8 24h-6l-5-17-5 17h-6l-8-24h6l5 17 5-17h6z"/>
+                </svg>
+              </div>
+              <span class="tech-name">AWS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 05 AI / ML -->
+      <div class="podium-col col-ai" data-cat="AI / ML" tabindex="0" role="button" aria-label="Category: AI and Machine Learning">
+        <div class="stack-slab">
+          <div class="slab-head">
+            <span class="slab-num">05</span>
+            <h3 class="slab-title">AI / ML</h3>
+            <span class="slab-sub">Learning for tomorrow.</span>
+            <i class="slab-dash"></i>
+          </div>
+          <div class="slab-cubes">
+            <!-- Scikit-learn -->
+            <div class="tech-item" title="Scikit-learn">
+              <div class="cube-box">
+                <svg viewBox="0 0 128 128" width="28" height="26">
+                  <circle cx="48" cy="64" r="32" fill="#F89939"/>
+                  <circle cx="80" cy="64" r="32" fill="#3499CD"/>
+                  <text x="64" y="68" fill="#FFFFFF" font-family="sans-serif" font-weight="800" font-size="18" text-anchor="middle">learn</text>
+                </svg>
+              </div>
+              <span class="tech-name">Scikit-learn</span>
+            </div>
+            <!-- LangChain -->
+            <div class="tech-item" title="LangChain">
+              <div class="cube-box">
+                <svg viewBox="0 0 128 128" width="26" height="26">
+                  <circle cx="42" cy="42" r="14" fill="#2E7D32"/>
+                  <circle cx="86" cy="42" r="14" fill="#1565C0"/>
+                  <circle cx="64" cy="86" r="14" fill="#E65100"/>
+                  <path d="M 42 42 L 86 42 L 64 86 Z" stroke="#374151" stroke-width="6" fill="none" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <span class="tech-name">LangChain</span>
+            </div>
+            <!-- OpenAI / LLaMA -->
+            <div class="tech-item" title="OpenAI / LLaMA-3">
+              <div class="cube-box">
+                <svg viewBox="0 0 128 128" width="26" height="26">
+                  <path fill="#12172F" d="M106 53c-1-10-8-17-17-19-3-6-8-11-15-13-11-4-23 0-30 8-7 0-14 4-18 10-7 8-7 20-2 29-1 10 5 19 14 23 2 6 7 11 14 13 11 4 23 0 30-8 7 0 14-4 18-10 7-9 7-21 2-29zm-38 52c-7 0-13-4-16-10l18-10c2 1 4 2 6 2 4 0 8-3 8-8v-20l8 5c6 3 9 10 9 17 0 13-10 24-25 24zm-37-23c-4-6-4-14 0-20l18 10c0 2 0 4 1 6-2 4-1 9 3 12l-17 10c-3-5-4-12-2-18zm5-43c3-5 8-9 14-9l1 21c-2 1-3 2-5 4-4 2-6 7-5 12l-17-10c2-7 6-13 12-18zm57 4l-18 10c-2-1-4-2-6-2-4 0-8 3-8 8v20l-8-5c-6-3-9-10-9-17 0-13 10-24 25-24 7 0 13 4 16 10zm18 33c0 7-3 13-9 17l-1 -21c2-1 3-2 5-4 4-2 6-7 5-12l17 10c-4 5-9 9-17 10zm-35-5l-10-6 10-6 10 6-10 6z"/>
+                </svg>
+              </div>
+              <span class="tech-name">LLaMA-3 / AI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 06 TOOLS -->
+      <div class="podium-col col-tools" data-cat="Tools" tabindex="0" role="button" aria-label="Category: Tools">
+        <div class="stack-slab">
+          <div class="slab-head">
+            <span class="slab-num">06</span>
+            <h3 class="slab-title">Tools</h3>
+            <span class="slab-sub">Build. Deploy. Grow.</span>
+            <i class="slab-dash"></i>
+          </div>
+          <div class="slab-cubes">
+            <!-- Git -->
+            <div class="tech-item" title="Git">
+              <div class="cube-box">
+                <svg viewBox="0 0 128 128" width="26" height="26">
+                  <path fill="#F05032" d="M117 56L72 11c-3-3-9-3-12 0L49 22l15 15c3-1 7 0 9 2 3 3 3 8 0 11l15 15c3-1 7 0 9 2 4 4 4 10 0 14s-10 4-14 0c-3-3-3-8 0-11L69 51v29c1 1 1 3 1 4 0 5-4 10-10 10s-10-5-10-10c0-4 3-8 7-9V44c-4-1-7-5-7-9 0-4 2-7 5-9L40 11 11 40c-3 3-3 9 0 12l45 45c3 3 9 3 12 0l49-49c3-3 3-9 0-12z"/>
+                </svg>
+              </div>
+              <span class="tech-name">Git</span>
+            </div>
+            <!-- Docker -->
+            <div class="tech-item" title="Docker">
+              <div class="cube-box">
+                <svg viewBox="0 0 128 128" width="28" height="26">
+                  <path fill="#2496ED" d="M120 54c-3-1-10-1-14 2-2-4-7-7-14-8-1-8-7-15-16-17l-4 3c2 8 0 15-4 20-3 3-7 5-12 5H8c-3 12 3 26 13 34 14 11 35 12 52 11 26-1 46-13 51-36 6 0 12-2 15-7 1-2 1-5 1-7zm-40-6H66v-13h14v13zm-17 0H49v-13h14v13zm0-16H49V19h14v13zm-17 16H32v-13h14v13zm0-16H32V19h14v13zm-17 16H15v-13h14v13z"/>
+                </svg>
+              </div>
+              <span class="tech-name">Docker</span>
+            </div>
+            <!-- VS Code -->
+            <div class="tech-item" title="VS Code">
+              <div class="cube-box">
+                <svg viewBox="0 0 128 128" width="26" height="26">
+                  <path fill="#0065A9" d="M92 122l28-14c3-1 5-4 5-7V27c0-3-2-6-5-7L92 6c-3-1-6 0-8 2L42 43 23 28c-2-2-6-2-8 0L4 37c-3 2-3 6 0 8l20 19L4 83c-3 2-3 6 0 8l11 9c2 2 6 2 8 0l19-15 42 35c2 2 5 3 8 2z"/>
+                  <path fill="#007ACC" d="M92 6c-3-1-6 0-8 2L24 64l60 56c2 2 5 3 8 2l28-14c3-1 5-4 5-7V27c0-3-2-6-5-7L92 6z"/>
+                  <path fill="#1F9CF0" d="M117 27L84 64l33 37c2-1 3-3 3-5V32c0-2-1-4-3-5z"/>
+                  <path fill="#005A9E" d="M92 6l-8 7 24 23 12-9c0-3-2-6-5-7L92 6z"/>
+                </svg>
+              </div>
+              <span class="tech-name">VS Code</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Interactive Floating Detail Flyout -->
+    <div class="skills-detail-flyout" id="skillsFlyout" aria-live="polite">
+      <div class="flyout-close" id="flyoutClose" aria-label="Close details">&times;</div>
+      <div class="flyout-head">
+        <span class="flyout-num" id="flyoutNum">01</span>
+        <div>
+          <h4 class="flyout-title" id="flyoutTitle">Languages</h4>
+          <small class="flyout-sub" id="flyoutSub">The foundation.</small>
+        </div>
+      </div>
+      <div class="flyout-tags" id="flyoutTags"></div>
+      <div class="flyout-proj-box">
+        <span class="flyout-proj-lbl">Where I Used It:</span>
+        <div class="flyout-proj-list" id="flyoutProjects"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-projects" id="work">
+  <!-- Section Header with Editorial Typography & Calligraphy Note -->
+  <div class="projects-header rv">
+    <div class="projects-title-col">
+      <div class="projects-eyebrow">Projects</div>
+      <h2 class="projects-main-title">
+        Things I’ve <span class="title-serif-wrap"><em>built.</em><svg class="title-brush-svg" viewBox="0 0 160 16" fill="none"><path d="M 4 10 C 50 3, 110 3, 156 8" stroke="#E86C43" stroke-width="3.5" stroke-linecap="round"/></svg></span>
+      </h2>
+    </div>
+    <div class="projects-handwritten-note" aria-hidden="true">
+      <div class="hw-phrase">Turning ideas<br>into real products</div>
+      <svg class="hw-arrow-svg" viewBox="0 0 70 50" fill="none">
+        <path d="M 8 10 C 38 6, 56 22, 46 44" stroke="#E86C43" stroke-width="1.8" stroke-dasharray="3.5 3.5" stroke-linecap="round"/>
+        <path d="M 38 38 L 46 45 L 51 36" stroke="#E86C43" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="hw-sparkle-accents">
+        <span class="spk-1">✦</span>
+        <span class="spk-2">✦</span>
+        <span class="spk-3">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Showcase Layout (Showcase Card + Right Rail) -->
+  <div class="projects-layout-grid rv">
+    
+    <!-- Large Premium Showcase Card -->
+    <article class="project-showcase-card" id="projectCard" aria-live="polite">
+      
+      <!-- Left: Information Column -->
+      <div class="project-info-col">
+        <div class="p-meta-row">
+          <span class="p-year-tag" id="pYear">2026</span>
+        </div>
+        <h3 class="p-title" id="pTitle">AI_NUTRA-FOOD</h3>
+        <p class="p-desc p-desc-1" id="pDesc1">An AI-powered nutrition store with login, product management, cart and a responsive interface.</p>
+        <p class="p-desc p-desc-2" id="pDesc2">A chatbot and voice assistant built on LangChain and LLaMA-3 answer nutrition questions and recommend products. RAG keeps answers specific to the store.</p>
+        
+        <!-- Technology Badges -->
+        <div class="p-stack-badges" id="pStack"></div>
+
+        <!-- Action Buttons -->
+        <div class="p-actions-row">
+          <a class="p-btn-live" id="pLiveBtn" href="https://ai-nutra-food-tznc.vercel.app/" target="_blank" rel="noopener">
+            <span>Visit live site</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </a>
+          <a class="p-btn-code" id="pCodeBtn" href="https://github.com/basava1084" target="_blank" rel="noopener">
+            <span>View code</span>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            <span class="arr" aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <!-- Bottom 3 Feature Highlights -->
+        <div class="p-features-grid" id="pFeatures"></div>
+      </div>
+
+      <!-- Right: Visual Preview & Carousel Controls -->
+      <div class="project-visual-col">
+        <div class="visual-ambient-glow" aria-hidden="true"></div>
+        <div class="visual-decor-sparkles" aria-hidden="true">
+          <span>✦</span><span>✦</span><span>✦</span>
+        </div>
+
+        <!-- Screen Preview Stage -->
+        <div class="project-preview-stage" id="pStage">
+          <div class="browser-mockup-frame">
+            <div class="mockup-top-bar">
+              <div class="mockup-dots">
+                <span class="dot d-red"></span>
+                <span class="dot d-yellow"></span>
+                <span class="dot d-green"></span>
+              </div>
+              <div class="mockup-address" id="pMockupAddress">nutrafood.app</div>
+            </div>
+            <div class="mockup-screen-content">
+              <img class="mockup-screen-img" id="pMainImg" src="assets/projects/ai-nutra-food.jpg" alt="AI_NUTRA-FOOD Preview">
+            </div>
+          </div>
+
+          <!-- Floating Secondary Widget Overlay -->
+          <div class="project-floating-card" id="pFloatingCard"></div>
+        </div>
+
+        <!-- Carousel Bottom Controls -->
+        <div class="project-carousel-bar">
+          <div class="carousel-nav-group">
+            <button class="c-nav-circle-btn" id="pPrevBtn" type="button" aria-label="Previous project">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <span class="c-counter-lbl" id="pCounter">01 / 04</span>
+            <button class="c-nav-circle-btn next" id="pNextBtn" type="button" aria-label="Next project">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+          <div class="carousel-progress-track" id="pProgressBar" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="4">
+            <div class="p-progress-segment active"></div>
+            <div class="p-progress-segment"></div>
+            <div class="p-progress-segment"></div>
+            <div class="p-progress-segment"></div>
+          </div>
+        </div>
+
+      </div>
+
+    </article>
+
+    <!-- Right Rail Navigation -->
+    <nav class="project-nav-rail" id="projectNavRail" role="tablist" aria-label="Project selection">
+      <!-- Generated via script.js -->
+    </nav>
+
+  </div>
+</section>
+
+<section class="sec sec-learn" id="learn">
+  <div class="learn-layout-grid rv">
+    
+    <!-- 1. Left Column: Heading, Info, Achievement Badges & Actions -->
+    <div class="learn-info-col">
+      <div class="learn-eyebrow">L E A R N I N G</div>
+      <h2 class="learn-main-title">
+        Always<br>
+        <span class="learn-serif-wrap"><em>learning.</em><svg class="learn-brush-svg" viewBox="0 0 160 16" fill="none"><path d="M 4 10 C 50 3, 110 3, 156 8" stroke="#F47735" stroke-width="3.5" stroke-linecap="round"/></svg></span>
+      </h2>
+      <p class="learn-desc-text">Courses and certifications that shaped how I build, and I’m still adding to the list. Exploring new technologies to grow every day.</p>
+      
+      <!-- Achievement Indicators -->
+      <div class="learn-achieve-row">
+        <div class="achieve-pill">
+          <div class="achieve-val">4+</div>
+          <div class="achieve-lbl">Courses Completed</div>
+        </div>
+        <div class="achieve-pill">
+          <div class="achieve-val">4</div>
+          <div class="achieve-lbl">Certifications</div>
+        </div>
+        <div class="achieve-pill">
+          <div class="achieve-val">100%</div>
+          <div class="achieve-lbl">Continuous Growth</div>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="learn-actions">
+        <button class="learn-btn-primary" id="viewAllCertsBtn" type="button">
+          <span>View All Certificates</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </button>
+        <a class="learn-btn-journey" href="#journey">
+          <span>My Learning Journey</span>
+          <span class="arr" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- 2. Central Column: Cinematic Realistic Workspace Illustration -->
+    <div class="learn-visual-col">
+      <div class="learn-visual-card">
+        <div class="learn-img-frame">
+          <img class="learn-workspace-img" src="assets/learning-workspace.jpg" alt="Developer learning workspace with open laptop, algorithm diagrams, stacked technical books and coffee mug" loading="lazy">
+        </div>
+        <div class="learn-visual-badge">
+          <span class="badge-dot" aria-hidden="true"></span>
+          <span>Active Learner · Tech Explorer</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Right Column: Certification Cards List -->
+    <div class="learn-certs-col" id="certsList" role="tablist" aria-label="Certifications list">
+      <!-- Generated dynamically via script.js -->
+    </div>
+
+  </div>
+
+  <!-- Certificate Verification Modal -->
+  <div class="cert-modal-backdrop" id="certModal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+    <div class="cert-modal-card">
+      <button class="cert-modal-close" id="certModalClose" type="button" aria-label="Close modal">&times;</button>
+      <div class="cert-modal-header">
+        <span class="cert-modal-badge" id="modalBadge">Verified Certificate</span>
+        <h3 class="cert-modal-title" id="modalTitle">Foundations of AI</h3>
+        <p class="cert-modal-sub" id="modalSub">Microsoft &amp; AICTE · 2025</p>
+      </div>
+      <div class="cert-modal-body" id="modalBody">
+        <p id="modalDetails">Comprehensive foundational training covering Artificial Intelligence principles, Machine Learning lifecycles, and neural network architectures.</p>
+        <div class="modal-meta-grid" id="modalMetaGrid">
+          <div><strong>Issuer</strong><span id="modalIssuer">Microsoft &amp; AICTE</span></div>
+          <div><strong>Year</strong><span id="modalYear">2025</span></div>
+          <div><strong>Status</strong><span id="modalStatus" style="color:#27C93F; font-weight:700">Verified</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-journey" id="journey">
+  <div class="journey-stage rv">
+
+    <!-- 1. Left Column: Eyebrow, Main Title, Description & Tabs -->
+    <div class="j-col-intro">
+      <div class="j-eyebrow">
+        <span class="j-eyebrow-line"></span>
+        <span class="j-eyebrow-text">JOURNEY</span>
+      </div>
+      <h2 class="j-title">
+        Education &amp;<br>
+        <span class="j-title-serif">Experience.</span>
+      </h2>
+      <p class="j-desc">
+        A journey of continuous learning, hands-on experience and real-world problem solving.
+      </p>
+      <div class="j-tabs" id="jTabs" role="tablist" aria-label="Education and Experience tabs">
+        <button type="button" class="j-tab" data-idx="0" role="tab" aria-selected="false">B.Sc.</button>
+        <button type="button" class="j-tab active" data-idx="1" role="tab" aria-selected="true">MCA</button>
+        <button type="button" class="j-tab" data-idx="2" role="tab" aria-selected="false">Internship</button>
+      </div>
+    </div>
+
+    <!-- 2. Center Column: Translucent Glassmorphic Education & Experience Card -->
+    <div class="j-col-card">
+      <div class="j-glass-card" id="jGlassCard">
+        <div class="j-card-top">
+          <div class="j-badge-icon" id="jBadgeIcon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+              <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/>
+            </svg>
+          </div>
+          <div class="j-card-head-meta">
+            <div class="j-card-period" id="jCardPeriod">2024 – 2026</div>
+            <h3 class="j-card-title" id="jCardTitle">Master of Computer Applications</h3>
+            <div class="j-card-subtitle" id="jCardSub">REVA University, Bengaluru · CGPA 9.05</div>
+          </div>
+        </div>
+
+        <div class="j-card-divider"></div>
+
+        <div class="j-card-bullets" id="jCardBullets">
+          <div class="j-bullet-row">
+            <div class="j-bullet-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                <line x1="8" y1="21" x2="16" y2="21"/>
+                <line x1="12" y1="17" x2="12" y2="21"/>
+              </svg>
+            </div>
+            <div class="j-bullet-text">
+              Full-stack web development, AI/ML and LLM-powered applications.
+            </div>
+          </div>
+          <div class="j-bullet-row">
+            <div class="j-bullet-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 18h6"/>
+                <path d="M10 22h4"/>
+                <path d="M12 2a7 7 0 0 0-7 7c0 2.5 1.5 4.7 3.5 5.8.5.3.8.8.8 1.4v.8h5.4v-.8c0-.6.3-1.1.8-1.4 2-1.1 3.5-3.3 3.5-5.8a7 7 0 0 0-7-7z"/>
+              </svg>
+            </div>
+            <div class="j-bullet-text">
+              Built AI_NUTRA-FOOD, Smart Emotion Care Desk, SkillSwap and Code Mining Tool.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Right Column: Vertical Academic Timeline -->
+    <div class="j-col-timeline" id="jTimeline">
+      <div class="j-timeline-track">
+        <div class="j-timeline-line"></div>
+
+        <div class="j-timeline-item active" id="jTimeStart">
+          <div class="j-timeline-marker">
+            <span class="j-marker-glow"></span>
+            <span class="j-marker-dot"></span>
+          </div>
+          <div class="j-timeline-year" id="jYearStart">2024</div>
+        </div>
+
+        <div class="j-timeline-item muted" id="jTimeEnd">
+          <div class="j-timeline-marker">
+            <span class="j-marker-dot"></span>
+          </div>
+          <div class="j-timeline-year" id="jYearEnd">2026</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="sec sec-contact" id="contact">
+  <div class="contact-stage rv">
+
+    <!-- Ambient / Contrast Gradients -->
+    <div class="c-bg-overlay" aria-hidden="true"></div>
+
+    <!-- Decorative Handwritten Annotations (Left Desk / Post) -->
+    <div class="c-deco-left" aria-hidden="true">
+      <div class="c-deco-goals">
+        <span class="c-note-title">Same Person</span>
+        <span class="c-note-sub">Bigger Goals...</span>
+      </div>
+      <div class="c-deco-checklist">
+        <div class="c-chk-row"><span class="c-chk-box">☑</span> Build</div>
+        <div class="c-chk-row"><span class="c-chk-box">☑</span> Learn</div>
+        <div class="c-chk-row"><span class="c-chk-box">☑</span> Grow</div>
+        <div class="c-chk-row"><span class="c-chk-box">☑</span> Repeat</div>
+      </div>
+      <div class="c-deco-books">
+        <span>Ideas →</span>
+        <span>Code →</span>
+        <span>Build →</span>
+        <span>Opportunities →</span>
+      </div>
+    </div>
+
+    <!-- Decorative Motivational Note (Right Sky) -->
+    <div class="c-deco-right" aria-hidden="true">
+      <div class="c-plane-wrap">
+        <svg class="c-plane-svg" viewBox="0 0 48 48" fill="none">
+          <path d="M 6 36 C 18 32, 28 24, 38 12" stroke="#3267C8" stroke-dasharray="3 3" stroke-width="1.6"/>
+          <path d="M 44 8 L 26 22 L 31 26 L 44 8 Z" fill="#3267C8"/>
+          <path d="M 44 8 L 32 32 L 31 26 L 44 8 Z" fill="#204A9C"/>
+        </svg>
+      </div>
+      <div class="c-right-note">
+        <span class="c-crown-glyph">👑</span>
+        <span class="c-note-line">Build</span>
+        <span class="c-note-line">Better</span>
+        <span class="c-note-line">Opportunities</span>
+      </div>
+    </div>
+
+    <!-- Central Interactive Contact Content -->
+    <div class="contact-center-content">
+      
+      <!-- Label -->
+      <div class="c-eyebrow">
+        <span class="c-eyebrow-line"></span>
+        <span class="c-eyebrow-text">CONTACT</span>
+        <span class="c-eyebrow-line"></span>
+      </div>
+
+      <!-- Main Headline -->
+      <h2 class="c-title">
+        Let’s build something<br>
+        <span class="c-title-script">
+          great.
+          <svg class="c-title-underline" viewBox="0 0 160 20" fill="none" aria-hidden="true">
+            <path d="M 6 13 C 50 4, 110 4, 154 11" stroke="#3267C8" stroke-width="3.6" stroke-linecap="round"/>
+          </svg>
+        </span>
+      </h2>
+
+      <!-- Supporting Description -->
+      <p class="c-desc">
+        I’m looking for an entry-level Full-Stack or Software Developer role.<br>
+        Email is the fastest way to reach me.
+      </p>
+
+      <!-- Three Interactive Contact Cards -->
+      <div class="c-cards-row">
+        
+        <!-- 1. Email Card (Royal Blue Highlighted Glass) -->
+        <a class="c-card c-card-email" href="mailto:basavarajhg8970@gmail.com" aria-label="Drop me an email at basavarajhg8970@gmail.com">
+          <div class="c-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <div class="c-card-info">
+            <span class="c-card-val">basavarajhg8970@gmail.com</span>
+            <span class="c-card-sub">Drop me an email</span>
+          </div>
+          <div class="c-card-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </div>
+        </a>
+
+        <!-- 2. Phone / WhatsApp Card (Frosted Glass) -->
+        <a class="c-card c-card-phone" href="tel:+917411278970" aria-label="Call or WhatsApp +91 74112 78970">
+          <div class="c-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
+          <div class="c-card-info">
+            <span class="c-card-val">+91 74112 78970</span>
+            <span class="c-card-sub">Call or WhatsApp</span>
+          </div>
+          <div class="c-card-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </div>
+        </a>
+
+        <!-- 3. GitHub Card (Frosted Glass) -->
+        <a class="c-card c-card-github" href="https://github.com/basava1084" target="_blank" rel="noopener noreferrer" aria-label="Visit GitHub Profile">
+          <div class="c-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+            </svg>
+          </div>
+          <div class="c-card-info">
+            <span class="c-card-val">GitHub</span>
+            <span class="c-card-sub">Let’s connect</span>
+          </div>
+          <div class="c-card-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </div>
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- Integrated Footer -->
+    <div class="contact-footer">
+      <div class="c-ft-copy">© 2026 Basavaraj H G</div>
+      <div class="c-ft-loc">
+        <svg viewBox="0 0 24 24" fill="currentColor" class="c-pin-icon" aria-hidden="true">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+        </svg>
+        <span>Davanagere, Karnataka, India</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
