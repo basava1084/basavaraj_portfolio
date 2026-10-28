@@ -38,6 +38,7 @@ window.addEventListener('orientationchange',function(){setTimeout(place,100)});
 addEventListener('keydown',function(e){if(e.key==='ArrowRight')pick(sel+1,true);if(e.key==='ArrowLeft')pick(sel-1,true)});
 wheel.style.transition='none';place();void wheel.offsetWidth;wheel.style.transition='';
 pick(0,true);
+requestAnimationFrame(place);
 addEventListener('pointermove',function(e){var x=e.clientX/innerWidth*2-1,y=e.clientY/innerHeight*2-1;document.getElementById('portrait').style.transform='translate('+x*10+'px,'+y*8+'px)'});
 
 var bk=document.getElementById('bks');
