@@ -1,0 +1,68 @@
+<USER_REQUEST>
+ROLE
+
+You are a senior front-end engineer. Work carefully and change only what is asked.
+
+GOAL
+
+Remove my current landing page (the first screen visitors see before my portfolio) and replace it with the landing page whose full code is given at the bottom of this prompt. It must look and behave exactly like the given code. Do not redesign it, simplify it, or "improve" it. It must work perfectly on every device.
+
+WHAT THE PAGE IS (so you preserve it exactly)
+Light theme with navy (
+#0e1a2f), blue (
+#3b6fd8), gold (
+#d4902a) and ice-blue / champagne glows, ivory background (
+#f7f6f2).
+Fonts: "Bricolage Grotesque" and "Instrument Serif" (Google Fonts), with system fallbacks.
+Header: round photo avatar and name on the left; "Audio: Off/On" toggle and "Skip to portfolio" on the right.
+Hero, left side: "Hello, I'm", large gradient name "Basavaraj H G", role "Full Stack & AI Developer", a glass card that changes content, the "Enter portfolio" button, and a hint line.
+Hero, right side: my portrait in a gold ring at the centre of a glowing disc, pulse rings, two orbiting rings with glowing nodes, and a rotating wheel of six skill nodes. Clicking a node rotates the wheel (1.1 s ease) and swaps the card content with a staggered fade. It auto-cycles every 4.2 s after any click, and the arrow keys work. The portrait follows the mouse slightly.
+Background: drifting colour blobs, a dot grid, and floating gold bokeh circles.
+Clicking "Enter portfolio" opens a full-screen welcome overlay: circular reveal, my photo settles in full screen, a gold light sweep, "Welcome" slides up letter by letter, then "I'm Basavaraj H G", my role, a progress bar. After REDIRECT_MS (2800 ms) it goes straight to my portfolio.
+STEPS
+Inspect the project. Find the framework (plain HTML, React, Next.js, Vue, Vite, etc.), the current landing page or hero, and how the portfolio is routed.
+Back up first: copy the current landing page files to a folder named _old_landing_backup (or make a git commit) so nothing is lost.
+Remove the current landing page code (markup, styles, scripts, unused assets that belong only to it). Do not touch my portfolio pages or other sections.
+Add the new landing page from the code below:
+Plain HTML project: use the code as index.html (or the landing route file). Put images in images/.
+React / Next.js / Vue / other: convert it into one component or page. Keep the markup, CSS and logic identical. Move the CSS into a scoped or CSS-module file, and move the script into the component lifecycle (run it once on mount and clean up event listeners, timers and intervals on unmount). Do not change any visual value, timing, easing or colour. Next.js: mark it a client component and use next/font or keep the Google Fonts link.
+Images: save my two photos as images/photo.jpg (large, used for the portrait wheel and the full-screen welcome) and images/face.jpg (small square face crop for the header avatar). In the code the variables are PHOTO and FACE. Point them at the correct public path for this framework, for example /images/photo.jpg. If the photos are missing, stop and ask me for them. Never invent placeholder faces.
+Wire the redirect: set PORTFOLIO_URL to my real portfolio route or address. For single-page apps, use the router (for example navigate('/portfolio') or router.push('/portfolio')) instead of a full page reload, but keep the 2800 ms delay. The "Skip to portfolio" link must go to the same place.
+Make sure the old landing page no longer renders anywhere, and that the new one is the first page visitors see (root route /).
+RESPONSIVE REQUIREMENTS (must pass on every device)
+
+The code already includes a breakpoint at 860px (stacked layout with the wheel on top) and a hide-skip rule on small screens. Keep that behaviour and verify it. Fix only real problems, and fix them without changing the design.
+
+Test at these widths: 320, 360, 375, 390, 414, 600, 768, 820, 1024, 1280, 1440, 1920 and 2560 px. Also test phone landscape (for example 844x390) and short laptop screens (for example 1366x640).
+No horizontal scrolling at any size. No element may be cut off or overlap text.
+The wheel must stay a perfect circle and fully visible. The six nodes must never overlap the portrait or run off screen. The nodes are positioned by JavaScript from the wheel width, so the resize handler must recalculate them on resize and on orientation change.
+On phones the content may scroll vertically inside the hero. The "Enter portfolio" button must be reachable without awkward scrolling on a typical phone.
+Use dynamic viewport height (dvh) where needed so mobile browser address bars never hide the button. Respect safe-area insets (notches and home bars).
+Touch: all buttons and wheel nodes are at least 44x44 px, with no hover-only features. Wheel nodes work by tap.
+The full-screen welcome overlay must fill the screen on every device: on landscape screens the photo sits on the right with the text on the left, and on portrait phones the photo fills the screen with the text at the bottom. The welcome text must never overflow.
+Text must remain readable (minimum 14px body text) at every size.
+Respect prefers-reduced-motion: keep the page usable with animations off, and still redirect.
+Performance: no layout jank; animations use transform and opacity.
+DO NOT
+Do not change colours, fonts, copy, animation timings or layout design.
+Do not add libraries or frameworks that are not already in the project.
+Do not remove the Audio toggle, the Skip link, or the keyboard controls.
+Do not touch the portfolio pages.
+THINGS I MAY WANT TO EDIT LATER (keep them easy to find)
+PORTFOLIO_URL and REDIRECT_MS at the top of the script.
+The items array (six skills: icon text, title, description, tags).
+The PHOTO and FACE image paths.
+ACCEPTANCE CHECKLIST (verify and report back)
+ Old landing code removed, backup created, portfolio untouched.
+ New page is the first page at / and matches the given code visually.
+ Wheel rotates on click and tap, card updates, auto-cycle and arrow keys work.
+ Enter portfolio shows the full-screen photo and welcome animation, then goes to the portfolio at 2.8 s.
+ Skip to portfolio works.
+ Photos load (header avatar, wheel portrait, welcome screen).
+ No console errors, no horizontal scroll at any tested width, and no layout break on phone, tablet, laptop, large monitor or phone landscape.
+ Short summary of the files you changed or removed.
+THE CODE (use exactly this)
+
+Save as index.html (or convert as described above). It expects images/photo.jpg and images/face.jpg.
+
+html

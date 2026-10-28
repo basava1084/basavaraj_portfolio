@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Basavaraj H G · Full Stack &amp; AI Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&display=swap">
+<style>
+:root{color-scheme:light;--bg:#f7f6f2;--navy:#0e1a2f;--blue:#3b6fd8;--gold:#d4902a;--goldl:#f2c46d;--ice:#dbe8ff;--champ:#f6e3b8;--muted:rgba(14,26,47,.62);
+--sans:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif;--serif:"Instrument Serif",Georgia,serif}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%;background:var(--bg);color:var(--navy);font-family:var(--sans);overflow:hidden}
+.stage{position:relative;height:100%;padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px);overflow:hidden}
+.blobs i{position:absolute;border-radius:50%;filter:blur(90px);animation:drift 22s ease-in-out infinite alternate}
+.blobs i:nth-child(1){width:52vmax;height:52vmax;left:-16vmax;top:-20vmax;background:var(--ice);opacity:.95}
+.blobs i:nth-child(2){width:40vmax;height:40vmax;right:-10vmax;top:4vh;background:var(--champ);opacity:.55;animation-duration:27s}
+.blobs i:nth-child(3){width:46vmax;height:46vmax;left:18vw;bottom:-28vmax;background:#c4d8fb;opacity:.8;animation-duration:30s}
+.blobs i:nth-child(4){width:24vmax;height:24vmax;right:16vw;bottom:-8vmax;background:var(--goldl);opacity:.35;animation-duration:24s}
+@keyframes drift{to{transform:translate(7vw,5vh) scale(1.15)}}
+.dots{position:absolute;inset:0;background-image:radial-gradient(rgba(14,26,47,.16) 1.2px,transparent 1.3px);background-size:26px 26px;
+-webkit-mask:radial-gradient(ellipse at 50% 46%,#000 10%,transparent 75%);mask:radial-gradient(ellipse at 50% 46%,#000 10%,transparent 75%)}
+#c{position:absolute;inset:0}
+.glow{position:fixed;left:0;top:0;width:360px;height:360px;margin:-180px 0 0 -180px;border-radius:50%;pointer-events:none;opacity:0;transition:opacity .4s;background:radial-gradient(circle,rgba(242,196,109,.35),transparent 65%)}
+h1{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+header{position:absolute;z-index:5;left:0;right:0;top:env(safe-area-inset-top,0px);display:flex;justify-content:space-between;align-items:center;padding:26px clamp(18px,5vw,90px)}
+.brand{display:flex;gap:14px;align-items:center}
+.logo{width:56px;height:56px;border-radius:50%;object-fit:cover;border:3.5px solid #fff;box-shadow:0 0 0 2.5px var(--gold),0 8px 24px rgba(212,144,42,.3)}
+.brand b{display:block;font-size:20px;font-weight:800;color:var(--navy);line-height:1.15;letter-spacing:-.015em}
+.brand span{font-family:var(--serif);font-style:italic;font-size:21px;color:var(--gold);line-height:1.15;display:block}
+.actions{display:flex;gap:10px}
+.pill{font:500 14px var(--sans);color:var(--navy);padding:11px 20px;border-radius:99px;cursor:pointer;text-decoration:none;display:inline-flex;gap:9px;align-items:center;
+background:rgba(255,255,255,.75);border:1px solid rgba(14,26,47,.16);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:border-color .2s,background .2s}
+.pill:hover{background:#fff;border-color:var(--gold)}
+.eq{display:inline-flex;gap:2px;align-items:flex-end;height:12px}
+.eq i{width:2px;height:3px;background:var(--gold);border-radius:2px}
+.on .eq i{animation:eq .8s ease-in-out infinite alternate}
+.on .eq i:nth-child(2){animation-delay:.2s}.on .eq i:nth-child(3){animation-delay:.4s}.on .eq i:nth-child(4){animation-delay:.1s}
+@keyframes eq{to{height:12px}}
+.foot{position:absolute;z-index:5;left:0;right:0;bottom:max(5vh,30px);display:flex;flex-direction:column;align-items:center;gap:20px}
+.ticks{display:flex;gap:10px}
+.ticks button{width:44px;height:18px;background:none;border:0;cursor:pointer;position:relative}
+.ticks button::after{content:"";position:absolute;left:0;right:0;top:8px;height:3px;border-radius:3px;background:rgba(14,26,47,.16);transition:background .3s}
+.ticks button.a::after{background:linear-gradient(90deg,var(--navy),var(--blue),var(--gold))}
+.hint{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--muted)}
+.enter{position:relative;overflow:hidden;font:800 18px var(--sans);color:#fff;border:0;cursor:pointer;padding:19px 46px;border-radius:99px;
+background:var(--navy);box-shadow:0 12px 40px rgba(14,26,47,.35),0 0 0 1px rgba(242,196,109,.5) inset;transition:transform .2s,box-shadow .3s}
+.enter::before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(242,196,109,.5) 50%,transparent 70%);transform:translateX(-120%);animation:sheen 4s ease-in-out infinite}
+@keyframes sheen{40%,100%{transform:translateX(120%)}}
+.enter:hover{transform:translateY(-3px);box-shadow:0 0 0 7px rgba(212,144,42,.2),0 18px 56px rgba(212,144,42,.5)}
+.enter span{display:inline-block;margin-left:10px;color:var(--goldl);transition:transform .25s}.enter:hover span{transform:translateX(6px)}
+.pill:focus-visible,.enter:focus-visible,.ticks button:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+
+/* full-screen welcome */
+.welcome{position:fixed;inset:0;z-index:30;overflow:hidden;background:#0c1524;pointer-events:none;clip-path:circle(0% at 50% 92%);transition:clip-path .9s cubic-bezier(.7,0,.2,1)}
+.welcome.go{clip-path:circle(150% at 50% 92%);pointer-events:auto}
+.wbg{position:absolute;inset:-10%;background-size:cover;background-position:center;background-image:url('assets/welcome-board.png');filter:blur(50px) brightness(.35);opacity:.65}
+.wphoto-wrap{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.wphoto{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center center;opacity:0;transform-origin:center center}
+@media (min-aspect-ratio:18/10) and (max-aspect-ratio:22/10){.wphoto{object-fit:cover}}
+.go .wphoto{animation:settle 4.2s .1s cubic-bezier(.16,1,.3,1) forwards}
+@keyframes settle{0%{opacity:0;transform:scale(1.02)}15%{opacity:1}100%{opacity:1;transform:scale(1)}}
+.wgradient{display:none}
+.wsweep{position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,rgba(242,196,109,.15) 50%,transparent 65%);transform:translateX(-110%);pointer-events:none;z-index:12}
+.go .wsweep{animation:sweep 2.2s .4s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes sweep{to{transform:translateX(110%)}}
+.wcontent{display:none}
+@media(max-width:760px){
+  .skip{display:none}
+  header{padding:18px clamp(12px,3.5vw,24px);gap:10px}
+  .logo{width:44px;height:44px}
+  .brand{gap:10px}
+  .brand b{font-size:16px}
+  .brand span{font-size:15px}
+  .actions{gap:6px}
+  .pill{padding:8px 14px;font-size:12px}
+  .wphoto-wrap{position:absolute;inset:0;width:100%;height:100%}
+  .wphoto{object-fit:contain;object-position:center center}
+  .wcontent{display:none}
+}
+@media(max-width:420px){
+  header{padding:14px 10px;gap:8px}
+  .logo{width:38px;height:38px}
+  .brand b{font-size:14px}
+  .brand span{font-size:13px}
+  .pill{padding:7px 10px;font-size:11px;gap:6px}
+  .enter{padding:15px 32px;font-size:16px}
+  .hint{font-size:16px}
+  .ticks button{width:36px}
+}
+@media(prefers-reduced-motion:reduce){.blobs i,.enter::before{animation:none}}
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="blobs" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <div class="dots" aria-hidden="true"></div>
+  <canvas id="c" aria-hidden="true"></canvas>
+  <div class="glow" id="glow"></div>
+  <h1>Basavaraj H G, Full Stack and AI Developer</h1>
+
+  <header>
+    <div class="brand"><img class="logo" id="face" src="assets/profile-face.png" alt="Basavaraj H G"><div><b>Basavaraj H G</b><span>Full Stack &amp; AI Developer</span></div></div>
+    <div class="actions">
+      <button class="pill" id="audio" type="button"><span class="eq"><i></i><i></i><i></i><i></i></span><span id="al">Audio: Off</span></button>
+      <a class="pill skip" id="skip" href="index.html">Skip to portfolio ↗</a>
+    </div>
+  </header>
+
+  <div class="foot">
+    <div class="ticks" id="ticks"><button type="button" aria-label="Show name"></button><button type="button" aria-label="Show Full Stack"></button><button type="button" aria-label="Show AI Developer"></button></div>
+    <div class="hint">Move through the dots, click to scatter them.</div>
+    <button class="enter" id="enter" type="button">Enter portfolio<span>→</span></button>
+  </div>
+</div>
+
+<div class="welcome" id="welcome" aria-live="polite">
+  <div class="wbg" id="wbg"></div>
+  <div class="wphoto-wrap">
+    <img class="wphoto" id="wimg" src="assets/welcome-board.png" alt="Basavaraj H G">
+    <div class="wgradient"></div>
+  </div>
+  <div class="wsweep"></div>
+  <div class="wcontent">
+    <div class="wt" id="wt" aria-label="Welcome"></div>
+    <p class="wn">I’m Basavaraj H G</p>
+    <p class="wr">Full Stack &amp; AI Developer · taking you to my portfolio</p>
+    <div class="wbar"><i></i></div>
+  </div>
+</div>
+
+<audio id="bgAudio" src="assets/om-veezha-veera-bgm.mp3" loop preload="auto"></audio>
+
+<script>
+(function(){
+/* ===== Set these two ===== */
+var PORTFOLIO_URL='index.html';   // real portfolio link
+var REDIRECT_MS=4500;             // 4 to 5 seconds after clicking Enter
+/* ========================= */
+var PHOTO='assets/welcome-board.png';
+var FACE='assets/profile-face.png';
+document.getElementById('face').src=FACE;
+document.getElementById('wimg').src=PHOTO;
+document.getElementById('wbg').style.backgroundImage='url('+PHOTO+')';
+document.getElementById('skip').href=PORTFOLIO_URL;
+
+var cv=document.getElementById('c'),g=cv.getContext('2d'),DPR=Math.min(devicePixelRatio||1,2),W,H,N,P=[],T=[],cur=0,mode='text',timer;
+var words=[['BASAVARAJ'],['FULL STACK','DEVELOPER'],['AI DEVELOPER']],mouse={x:-999,y:-999},glow=document.getElementById('glow'),ticks=document.querySelectorAll('#ticks button');
+var FONT='800 200px "Bricolage Grotesque",system-ui,sans-serif';
+var PS=[[0,14,26,47],[.45,40,88,200],[.6,40,88,200],[.78,184,112,16],[1,184,112,16]],pal=[];
+for(var k=0;k<64;k++){var t=k/63,j=0;while(j<PS.length-2&&t>PS[j+1][0])j++;var a=PS[j],b=PS[j+1],uu=Math.max(0,Math.min(1,(t-a[0])/(b[0]-a[0])));pal.push('rgb('+[1,2,3].map(function(n){return Math.round(a[n]+(b[n]-a[n])*uu)}).join(',')+')')}
+
+function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.random()*(i+1)|0,t=a[i];a[i]=a[j];a[j]=t}return a}
+var tCh=0,U=[];
+function build(){
+  W=innerWidth;H=innerHeight;cv.width=W*DPR;cv.height=H*DPR;cv.style.width=W+'px';cv.style.height=H+'px';g.setTransform(DPR,0,0,DPR,0,0);
+  N=W<700?2800:6800;
+  var off=document.createElement('canvas');off.width=W;off.height=H;var o=off.getContext('2d');U=[];
+  T=words.map(function(lines){
+    o.clearRect(0,0,W,H);o.font=FONT;
+    var mw=Math.max.apply(null,lines.map(function(l){return o.measureText(l).width}));
+    var fs=Math.min(200*(W*.88)/mw,H*(lines.length>1?.22:.34));
+    o.font=FONT.replace('200px',fs+'px');o.textAlign='center';o.textBaseline='middle';o.fillStyle='#fff';
+    var lh=fs*1.02,y0=H*.46-(lines.length-1)*lh/2;
+    lines.forEach(function(l,i){o.fillText(l,W/2,y0+i*lh)});
+    var d=o.getImageData(0,0,W,H).data,s=[];
+    for(var y=0;y<H;y+=2)for(var x=0;x<W;x+=2)if(d[(y*W+x)*4+3]>128)s.push([x,y]);
+    var u=document.createElement('canvas');u.width=W;u.height=H;var ug=u.getContext('2d'),gr=ug.createLinearGradient(0,0,W,0);
+    PS.forEach(function(p){gr.addColorStop(p[0],'rgb('+p[1]+','+p[2]+','+p[3]+')')});
+    ug.drawImage(off,0,0);ug.globalCompositeOperation='source-in';ug.fillStyle=gr;ug.fillRect(0,0,W,H);U.push(u);
+    return shuffle(s).slice(0,N);
+  });
+  if(!P.length)for(var i=0;i<N;i++)P.push({x:Math.random()*W,y:Math.random()*H,vx:0,vy:0,s:Math.random()});
+}
+function frame(t){
+  g.clearRect(0,0,W,H);
+  var ua=Math.min(1,(t-tCh)/900)*.14;
+  if(mode==='text'&&U[cur]&&ua>0){g.globalAlpha=ua;g.drawImage(U[cur],0,0,W,H)}
+  g.globalAlpha=.96;
+  var tg=T[cur],L=tg.length,R=140,near=[],cx=W/2,cy=H/2;
+  for(var i=0;i<P.length;i++){
+    var p=P[i],q=tg[i%L],ax=0,ay=0;
+    if(mode==='text'){
+      ax=(q[0]-p.x)*.04+Math.sin(t/900+i)*.05;ay=(q[1]-p.y)*.04+Math.cos(t/800+i)*.05;
+      var dx=p.x-mouse.x,dy=p.y-mouse.y,d2=dx*dx+dy*dy;
+      if(d2<R*R){var d=Math.sqrt(d2)||1,f=(1-d/R)*5;ax+=dx/d*f;ay+=dy/d*f;if(near.length<80)near.push(p)}
+    }else{ax=(cx-p.x)*.09;ay=(cy-p.y)*.09}
+    p.vx=(p.vx+ax)*.86;p.vy=(p.vy+ay)*.86;p.x+=p.vx;p.y+=p.vy;
+    g.fillStyle=pal[Math.max(0,Math.min(63,(p.x/W*63)|0))];
+    var r=2+p.s*1.6;g.fillRect(p.x,p.y,r,r);
+  }
+  g.globalAlpha=1;g.lineWidth=.8;
+  for(var a=0;a<near.length;a++)for(var b=a+1;b<near.length;b++){
+    var ex=near[a].x-near[b].x,ey=near[a].y-near[b].y,dd=ex*ex+ey*ey;
+    if(dd<3600){g.strokeStyle='rgba(184,112,16,'+(1-dd/3600)*.85+')';g.beginPath();g.moveTo(near[a].x,near[a].y);g.lineTo(near[b].x,near[b].y);g.stroke()}
+  }
+  requestAnimationFrame(frame);
+}
+function go(n){
+  cur=n;tCh=performance.now();ticks.forEach(function(b,i){b.classList.toggle('a',i===n)});
+  P.forEach(function(p){p.vx+=(Math.random()-.5)*9;p.vy+=(Math.random()-.5)*9});
+  clearInterval(timer);
+  if(!matchMedia('(prefers-reduced-motion:reduce)').matches)timer=setInterval(function(){go((cur+1)%3)},4800);
+}
+ticks.forEach(function(b,i){b.addEventListener('click',function(){go(i)})});
+addEventListener('pointermove',function(e){mouse.x=e.clientX;mouse.y=e.clientY;glow.style.opacity=1;glow.style.transform='translate('+e.clientX+'px,'+e.clientY+'px)'});
+addEventListener('pointerleave',function(){mouse.x=mouse.y=-999;glow.style.opacity=0});
+cv.addEventListener('pointerdown',function(e){P.forEach(function(p){var dx=p.x-e.clientX,dy=p.y-e.clientY,d=Math.sqrt(dx*dx+dy*dy)||1,f=Math.max(0,1-d/400)*38;p.vx+=dx/d*f;p.vy+=dy/d*f})});
+addEventListener('resize',build);
+
+var wt=document.getElementById('wt');if(wt){'Welcome'.split('').forEach(function(ch,i){var s=document.createElement('span');s.textContent=ch;s.style.setProperty('--i',i);wt.appendChild(s)});}
+var entered=false;
+document.getElementById('enter').addEventListener('click',function(){
+  if(entered)return;entered=true;mode='warp';
+  document.getElementById('welcome').classList.add('go');
+  fadeAudioOut();
+  setTimeout(function(){window.location.href=PORTFOLIO_URL},REDIRECT_MS);
+});
+
+// Veezha Veera BGM Audio Integration
+var audio=document.getElementById('bgAudio'),btn=document.getElementById('audio'),al=document.getElementById('al');
+var SOFT_VOL=0.22,fadeTimer=null;
+
+function fadeAudioIn(){
+  if(!audio)return;
+  clearInterval(fadeTimer);
+  audio.volume=0.02;
+  var p=audio.play();
+  if(p!==undefined){
+    p.then(function(){
+      btn.classList.add('on');
+      if(al)al.textContent='Veezha Veera BGM ♫';
+      fadeTimer=setInterval(function(){
+        if(audio.volume<SOFT_VOL-0.025){
+          audio.volume=Math.min(SOFT_VOL,audio.volume+0.025);
+        }else{
+          audio.volume=SOFT_VOL;
+          clearInterval(fadeTimer);
+        }
+      },45);
+    }).catch(function(err){
+      console.warn('Playback prevented:',err);
+    });
+  }
+}
+
+function fadeAudioOut(callback){
+  if(!audio)return;
+  clearInterval(fadeTimer);
+  fadeTimer=setInterval(function(){
+    if(audio.volume>0.035){
+      audio.volume=Math.max(0,audio.volume-0.035);
+    }else{
+      audio.volume=0;
+      clearInterval(fadeTimer);
+      audio.pause();
+      btn.classList.remove('on');
+      if(al)al.textContent='Audio: Off';
+      if(callback)callback();
+    }
+  },40);
+}
+
+btn.addEventListener('click',function(e){
+  e.stopPropagation();
+  if(audio.paused){
+    fadeAudioIn();
+  }else{
+    fadeAudioOut();
+  }
+});
+
+var started=false;function start(){if(started)return;started=true;build();go(0);requestAnimationFrame(frame)}
+if(document.fonts&&document.fonts.load){Promise.race([document.fonts.load(FONT),new Promise(function(r){setTimeout(r,1500)})]).then(start)}else start();
+})();
+</script>
+</body>
+</html>
